@@ -9,6 +9,16 @@ public class Member {
     private Long id;
     private String name;
 
+    //JPA는 내부적으로 Reflection을 쓰므로 기본 생성자가 있어야 함.
+    public Member(){
+
+    }
+
+    public Member(Long id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
     public Long getId() {
         return id;
     }
