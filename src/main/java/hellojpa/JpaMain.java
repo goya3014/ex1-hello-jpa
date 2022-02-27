@@ -67,10 +67,17 @@ public class JpaMain {
             System.out.println("==================");*/
 
             //플러시
-            Member member = new Member(200L, "member200");
+          /*  Member member = new Member(200L, "member200");
             em.persist(member);
-            em.flush();
-            System.out.println("=====================");
+            em.flush();*/
+
+            //준영속 상태
+            Member member = em.find(Member.class, 150L);
+            member.setName("200Change");
+            //em.detach(member);
+            em.clear();
+            Member member2 = em.find(Member.class, 150L);
+
             tx.commit();
         }catch(Exception ex){
             tx.rollback();
