@@ -13,7 +13,7 @@ public class Team {
 
     private String name;
 
-    @OneToMany(mappedBy = "team") //반대편에 걸려있는 변수명
+    @OneToMany(mappedBy = "team") //반대편에 걸려있는 변수명. 읽기 전용
     private List<Member> members = new ArrayList<>(); //arrayList로 초기화하는 것이 관례
 
     public Long getId() {

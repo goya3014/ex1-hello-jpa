@@ -40,7 +40,11 @@ public class Member {
         return team;
     }
 
-    public void setTeam(Team team) {
+    public void changeTeam(Team team) {
         this.team = team;
+
+        //순수 객체 상태를 고려하여 항상 양쪽에 값 설정필요.
+        //연관관계 편의 메소드 생성.
+        team.getMembers().add(this);
     }
 }
